@@ -61,7 +61,7 @@ impl LatencyCheck {
 
         match self.client.head(&self.url).send() {
             Ok(_) => Local::now() - start,
-            Err(e) => panic!("Error: {}", e),
+            Err(e) => panic!("error: {}", e),
         }
     }
 }
