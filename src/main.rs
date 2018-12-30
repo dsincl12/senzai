@@ -32,8 +32,8 @@ impl LatencyCheck {
         let (channel_tx, channel_rx) = channel();
 
         thread::spawn(move || loop {
-            thread::sleep(Duration::from_secs(1));
             channel_tx.send("").unwrap();
+            thread::sleep(Duration::from_secs(1));
         });
 
         let mut count = 0;
